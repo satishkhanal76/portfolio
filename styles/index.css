@@ -114,6 +114,12 @@ footer .footer-author {
   color: var(--color-slate300);
 }
 
+.custom-sections {
+  min-height: 50vh;
+  padding: 1rem;
+  margin-bottom: 2em;
+  border: 1px solid rgb(171, 57, 76);
+}
 /* Test */
 /* body {
   min-height: 200vh;

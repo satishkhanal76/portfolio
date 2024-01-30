@@ -91,12 +91,15 @@ body.light-theme .btn {
 .btn {
   --btn-background: var(--rose); /* Button background color*/
   --btn-complement: var(--rose-complementry); /* Button box-shadow color*/
+
   padding: 0.7rem;
   border-radius: 0.3rem;
   transition: transform ease 0.2s, background-color ease 0.2s,
     box-shadow ease 0.2s;
   cursor: pointer;
   user-select: none;
+
+  color: inherit;
 
   background: var(--btn-background);
   box-shadow: 3px 3px 8px var(--btn-complement),
@@ -134,6 +137,7 @@ body.light-theme .btn {
   background-color: var(--btn-complement);
   /* transform: translateY(-0.3rem); */
   transform: scale(1.1);
+  color: inherit;
 }
 
 .gradient-text {
