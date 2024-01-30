@@ -101,7 +101,23 @@ nav ul li a {
   font-size: var(--size-xsm);
 }
 
+footer {
+  padding: 1em;
+  /* background-color: red; */
+  /* min-height: 10em; */
+  box-shadow: -1px -1px 10px var(--color-slate100);
+}
+
+footer .footer-author {
+  /* font-size: var(--size-xl); */
+  text-align: center;
+  color: var(--color-slate300);
+}
+
 /* Test */
+/* body {
+  min-height: 200vh;
+} */
 
 .buttons-container {
   display: flex;
@@ -131,7 +147,7 @@ nav ul li a {
 
   .hero-text-container .hero-desc {
     font-size: var(--size-sm);
-    max-width: 60ch;
+    max-width: 70ch;
   }
 }
 
@@ -142,16 +158,15 @@ nav ul li a {
 
   .hero-text-container .hero-title-prefix {
     /* letter-spacing: -0.103rem; */
-    font-size: var(--size-m);
+    font-size: var(--size-l);
   }
 
   .hero-text-container .hero-title {
-    font-size: var(--size-xl);
+    font-size: var(--size-2xl);
   }
 
   .hero-text-container .hero-desc {
-    font-size: var(--size-sm);
-    max-width: 60ch;
+    font-size: var(--size-m);
   }
 }
 
