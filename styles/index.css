@@ -4,14 +4,17 @@
 
 .desktop-nav-section {
   /* Don't display it on mobile devices */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
+  width: 100%;
   background-color: inherit;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-container {
@@ -132,8 +135,7 @@ footer .footer-author {
 
 /* Small size tablet */
 @media (min-width: 768px) {
-  .desktop-nav-section {
-    display: flex;
+  .nav-wrapper {
     justify-content: space-between;
   }
 
