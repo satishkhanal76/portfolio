@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/modern-normalize.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/logo-styles.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <title>Portfolio</title>
   </head>
   <body>
-    <section class="container">
+    <section class="container desktop-nav-section">
+      <a href="./"><div class="logo-container"></div></a>
+
       <header id="header">
-        <nav>
+        <nav class="desktop-nav">
           <ul>
             <li><a href="#about-me">About Me</a></li>
             <li><a href="#my-projects">My Projects</a></li>
@@ -19,7 +28,7 @@
             <li>
               <button
                 id="theme-toggle"
-                class="btn pill gradient blue-hue hire-me-button"
+                class="btn pill gradient blue-hue toggle-theme-btn"
               >
                 Toggle Theme
               </button>
@@ -28,31 +37,33 @@
         </nav>
       </header>
     </section>
+
     <section class="container">
-      <main>
-        <div class="hero-container">
-          <div class="hero-img-container">
-            <div class="hero-img-wrapper">
-              <img
-                src="./public/images/hero-img.jpeg"
-                alt="Website Hero Image"
-                class="hero-img"
-              />
-            </div>
-          </div>
-          <div class="hero-text-container">
-            <h4 class="hero-title-prefix"><strong>I'm a</strong></h4>
-            <h1 class="hero-title">Full Stack Developer</h1>
-            <p class="hero-desc">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea magni
-              error debitis dolor odit quas repudiandae corrupti unde saepe
-              tempora obcaecati eligendi minus quibusdam similique distinctio
-              laboriosam corporis, nisi aut!
-            </p>
+      <div class="hero-container">
+        <div class="hero-img-container">
+          <div class="hero-img-wrapper">
+            <img
+              src="./public/images/hero-secondary-img.jpeg"
+              alt="Website Hero Image"
+              class="hero-img"
+            />
           </div>
         </div>
-      </main>
+        <div class="hero-text-container">
+          <h4 class="hero-title-prefix"><strong>I'm a</strong></h4>
+          <h1 class="hero-title">
+            Full-Stack <br /><span class="title-spread">Developer</span>
+          </h1>
+          <p class="hero-desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea magni
+            error debitis dolor odit quas repudiandae corrupti unde saepe
+            tempora obcaecati eligendi minus quibusdam similique distinctio
+            laboriosam corporis, nisi aut!
+          </p>
+        </div>
+      </div>
     </section>
+
     <section id="about-me" class="container custom-sections float-element">
       <h2>About Me</h2>
       <p>
@@ -102,9 +113,10 @@
     <footer>
       <section>
         <h3 class="footer-author">-Satish Khanal-</h3>
-        <a href="#header" class="btn">Go to top!</a>
+        <a href="#header" class="btn go-top">Go to top!</a>
       </section>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/logo-script.js"></script>
   </body>
 </html>

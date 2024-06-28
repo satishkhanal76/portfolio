@@ -1,0 +1,159 @@
+.logo-container {
+  --letter-color: black;
+  --letter-background-color: grey;
+  --letter-gap: 0.3em;
+  --letter-animation-time: 1.8s;
+  --font-size: 3rem;
+  --letter-width: 1em;
+  --letter-height: 1em;
+  --font-weight: 700;
+
+  display: flex;
+  gap: var(--letter-gap);
+  /* font-family: "Arial", sans-serif; */
+  font-size: var(--font-size);
+  position: relative;
+
+  user-select: none;
+}
+
+.letter {
+  position: relative;
+  width: var(--letter-width);
+  height: var(--letter-height);
+
+  font-weight: var(--font-weight, 700);
+
+  overflow: hidden;
+}
+
+.foreground,
+.background {
+  position: absolute;
+  inset: 0;
+}
+
+.foreground {
+  z-index: 2;
+}
+
+.background {
+  z-index: 1;
+}
+
+.split-element {
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left,
+.right {
+  position: absolute;
+
+  background-color: var(--letter-background-color);
+
+  padding-inline: 0.5em;
+
+  color: var(--letter-color);
+}
+
+.left {
+  clip-path: polygon(0 0, 55% 0, 55% 100%, 0% 100%);
+}
+
+.right {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+/* top-down animatiion */
+
+.logo-container.top-down .foreground.split .left {
+  animation: split-top var(--letter-animation-time) forwards;
+}
+
+.logo-container.top-down .foreground.split .right {
+  animation: split-bottom var(--letter-animation-time) forwards;
+}
+
+.logo-container.top-down .background.split .left {
+  animation: split-bottom-reverse var(--letter-animation-time) forwards;
+}
+
+.logo-container.top-down .background.split .right {
+  animation: split-top-reverse var(--letter-animation-time) forwards;
+}
+
+/* centre-split */
+.logo-container.centre-split .foreground.split .left {
+  animation: split-left var(--letter-animation-time) forwards;
+}
+
+.logo-container.centre-split .foreground.split .right {
+  animation: split-right var(--letter-animation-time) forwards;
+}
+
+@keyframes split-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes split-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes split-top {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes split-bottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes split-top-reverse {
+  100% {
+    transform: translateY(0);
+  }
+
+  0% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes split-bottom-reverse {
+  100% {
+    transform: translateY(0);
+  }
+
+  0% {
+    transform: translateY(100%);
+  }
+}

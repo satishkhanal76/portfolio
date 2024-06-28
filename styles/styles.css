@@ -1,5 +1,6 @@
 :root {
   --bg-primary: #161619;
+  --font-primary: "Signika Negative", sans-serif;
 
   --color-slate100: #f1f5f9;
   --color-slate200: #e2e8f0;
@@ -23,6 +24,17 @@
   --rose-complementry: hsl(345, 92%, 50%);
 }
 
+body.light-theme {
+  --bg-primary: hsl(210, 40%, 96%);
+
+  --color-slate100: #161619;
+  --color-slate200: #161619;
+  --color-slate300: #161619;
+  --color-slate400: #161619;
+  --color-slate500: #161619;
+  --color-slate600: #161619;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,8 +42,24 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--color-slate100);
-  transition: color 0.3s ease;
+
+  font-family: var(--font-primary);
+
+  transition: color 500ms ease, background-color 500ms linear;
 }
+
+/* body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.light-theme::after {
+  clip-path: circle(100% at 50% 50%);
+} */
 
 * {
   box-sizing: border-box;
@@ -79,9 +107,11 @@ h6 {
 
 p {
   color: var(--color-slate400);
-  font-size: var(--size-m);
+  font-size: var(--size-sm);
 }
-
+a {
+  font-size: var(--size-sm);
+}
 /* Buttons */
 
 body.light-theme .btn {
@@ -163,20 +193,67 @@ body.light-theme .btn {
   border-radius: 1rem;
   box-shadow: 3px 3px 15px grey, -3px -3px 15px grey;
 }
-.light-theme {
-  --bg-primary: #f1f5f9;
-
-  --color-slate100: #161619;
-  --color-slate200: #161619;
-  --color-slate300: #161619;
-  --color-slate400: #161619;
-  --color-slate500: #161619;
-  --color-slate600: #161619;
-}
 
 .container {
   width: 100%;
   padding: 0 0.2rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 430px is an iphone 14 pro max*/
+@media (min-width: 430px) {
+  .container {
+    width: 430px;
+  }
+  :root {
+    --size-xsm: 0.75em;
+    --size-sm: 1em;
+    --size-m: 1.5em;
+    --size-l: 2em;
+    --size-xl: 2.5em;
+    --size-2xl: 3em;
+    --size-3xl: 4em;
+    --size-4xl: 4.5em;
+  }
+}
+
+/* Small size tablet */
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 1024px;
+  }
+
+  :root {
+    --size-xsm: 0.8em;
+    --size-sm: 1.2em;
+    --size-m: 1.75em;
+    --size-l: 2.3em;
+    --size-xl: 2.8em;
+    --size-2xl: 3.2em;
+    --size-3xl: 4.3em;
+    --size-4xl: 4.6em;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --size-xsm: 0.85em;
+    --size-sm: 1.3em;
+    --size-m: 1.8em;
+    --size-l: 2.5em;
+    --size-xl: 3em;
+    --size-2xl: 3.5em;
+    --size-3xl: 4em;
+    --size-4xl: 4.5em;
+  }
+  .container {
+    width: 1440px;
+  }
 }
