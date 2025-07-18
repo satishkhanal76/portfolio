@@ -1,0 +1,17 @@
+[
+    {
+        "route": "/tic-tac-toe",
+        "path": "Tic-Tac-Toe",
+        "type": "static"
+    },
+    {
+        "route": "/flappy-bird",
+        "path": "FlappyBird",
+        "type": "static"
+    },
+    {
+        "route": "/chess",
+        "path": "ChessMultiplayer",
+        "type": "server"
+    }
+]
