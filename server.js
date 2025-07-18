@@ -8,9 +8,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load correct env file
+
+const currentDir = path.dirname(__filename);
 const mode = process.env.NODE_ENV || 'development';
-dotenv.config({ path: `.env.${mode}` });
+const envFile = mode === 'production' ? '.env' : '.env.development';
+dotenv.config({ path: path.resolve(currentDir, envFile) });
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,7 +27,7 @@ const projects = JSON.parse(fs.readFileSync(projectsConfigPath, 'utf-8'));
 
 // Only serve portfolio site in production
 if (mode === 'production') {
-    app.use('/', express.static(path.join(PROJECTS_ROOT, "public", "portfolio-frontend")));
+    app.use('/', express.static(path.join(PROJECTS_ROOT, "portfolio-frontend")));
 }else {
     app.use('/', express.static(path.join(PROJECTS_ROOT, 'satishkhanal76.github.io', "dist")));
 }
