@@ -19,21 +19,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const PROJECTS_ROOT = path.resolve(__dirname, process.env.PROJECTS_ROOT);
 
-const projectsConfigPath = path.join(__dirname, 'projects.json');
+const projectsFileName = mode === 'production' ? 'projects.json' : 'projects_development.json';
+const projectsConfigPath = path.join(__dirname, projectsFileName);
 const projects = JSON.parse(fs.readFileSync(projectsConfigPath, 'utf-8'));
 
 
-// === Static Projects ===
-
-// Only serve portfolio site in production
-if (mode === 'production') {
-    app.use('/', express.static(path.join(PROJECTS_ROOT, "portfolio-frontend")));
-}else {
-    app.use('/', express.static(path.join(PROJECTS_ROOT, 'satishkhanal76.github.io', "dist")));
-}
 
 for (const project of projects) {
-  const projectPath = path.join(PROJECTS_ROOT, project.path);
+  const projectPath = path.join(PROJECTS_ROOT, ...project.path);
 
   if (project.type === 'static') {
     app.use(project.route, express.static(projectPath));

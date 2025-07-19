@@ -1,7 +1,7 @@
 [
     {
         "route": "/",
-        "path": ["portfolio-frontend"],
+        "path": ["satishkhanal76.github.io", "dist"],
         "type": "static"
     },
     {
