@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   apps: [
     {
       name: 'portfolio',
@@ -10,6 +10,8 @@ module.exports = {
     {
       name: 'chess',
       script: './projects/ChessMultiplayer/index.js',
+      interpreter: 'node',
+      interpreter_args: '--enable-source-maps',
       env: {
         NODE_ENV: 'production',
         SERVER_PORT: 4001
