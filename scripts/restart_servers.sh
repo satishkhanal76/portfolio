@@ -10,7 +10,7 @@ for dir in projects/*; do
 done
 
 echo "Starting PM2 processes..."
-pm2 start ecosystem.config.cjs --env production
+pm2 start ecosystem.config.js --env production
 
 echo "Saving PM2 process list..."
 pm2 save
